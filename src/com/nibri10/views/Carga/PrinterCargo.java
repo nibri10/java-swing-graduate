@@ -19,6 +19,7 @@ public class PrinterCargo extends JFrame{
     private JTable table;
     private JButton removeAll;
     private JButton exit;
+    private JButton update;
     private static PrinterCargo printerCargo;
 
     public static PrinterCargo getInstance(){
@@ -49,6 +50,12 @@ public class PrinterCargo extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+            }
+        });
+        update.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateTable();
             }
         });
     }

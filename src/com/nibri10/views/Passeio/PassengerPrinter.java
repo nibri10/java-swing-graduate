@@ -17,6 +17,7 @@ public class PassengerPrinter extends  JFrame{
     private JTable table;
     private JButton removeAll;
     private JButton exit;
+    private JButton update;
     private static PassengerPrinter passengerPrinter;
 
     public static PassengerPrinter getInstance(){
@@ -47,6 +48,12 @@ public class PassengerPrinter extends  JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
+            }
+        });
+        update.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateTable();
             }
         });
     }
