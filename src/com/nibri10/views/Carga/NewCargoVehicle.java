@@ -28,6 +28,7 @@ public class NewCargoVehicle extends JFrame {
     private JButton save;
     private JTextField brand;
     private JTextField power;
+    private JTextField maximumWeight2;
     private static NewCargoVehicle newCargoVehicleFrame;
 
 
@@ -81,6 +82,19 @@ public class NewCargoVehicle extends JFrame {
 
             }
         });
+        maximumWeight2.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                try {
+                    Long.parseLong(maximumWeight2.getText());
+                    checkEnabledSaveButtonCargo();
+                } catch (NumberFormatException nfe) {
+                    maximumWeight2.setText("");
+                }
+
+            }
+        });
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,8 +141,9 @@ public class NewCargoVehicle extends JFrame {
         float maximumSpeedCast = Float.parseFloat(maximumSpeed.getText());
         int numberOfPistonsCast = Integer.parseInt(numberOfPistons.getText());
         float maximumWeightCast = Float.parseFloat(maximumWeight.getText());
+        float maximumWeightCast2 = Float.parseFloat(maximumWeight2.getText());
         int powerCast = Integer.parseInt(power.getText());
-        Carga carga = new Carga(plate.getText(), brand.getText(), model.getText(), color.getText(),maximumWeightCast, maximumSpeedCast);
+        Carga carga = new Carga(plate.getText(), brand.getText(), model.getText(), color.getText(),maximumWeightCast, maximumSpeedCast,maximumWeightCast2);
         carga.getMotor().setNumberOfPistons(numberOfPistonsCast);
         carga.getMotor().setPower(powerCast);
         if (Menu.getDBVehicles().addCargo(carga)) {
@@ -148,6 +163,7 @@ public class NewCargoVehicle extends JFrame {
                         && numberOfPistons.getText().length() >= 1
                         && power.getText().length() >= 1
                         && maximumWeight.getText().length() >= 1
+                        && maximumWeight2.getText().length() >= 1
         );
     }
 
@@ -158,6 +174,7 @@ public class NewCargoVehicle extends JFrame {
         maximumSpeed.setText("");
         numberOfPistons.setText("");
         maximumWeight.setText("");
+        maximumWeight2.setText("");
         brand.setText("");
         power.setText("");
         checkEnabledSaveButtonCargo();

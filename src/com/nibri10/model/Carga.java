@@ -13,7 +13,16 @@ import com.nibri10.abst.Veiculo;
  */
 public final class Carga extends Veiculo {
     private float tara = 0;
+    private float maximumWeight = 0;
 
+
+    public float getMaximumWeight() {
+        return maximumWeight;
+    }
+
+    public void setMaximumWeight(float maximumWeight) {
+        this.maximumWeight = maximumWeight;
+    }
 
     /**
      * @param plate
@@ -23,9 +32,10 @@ public final class Carga extends Veiculo {
      * @param tara
      * @param maximumSpeed
      */
-    public Carga(String plate, String brand,String model, String color, float tara, float maximumSpeed) {
+    public Carga(String plate, String brand,String model, String color, float tara, float maximumSpeed, float maximumWeight) {
         super(plate, brand, model, color, maximumSpeed);
         this.tara = tara;
+        this.maximumWeight = maximumWeight;
     }
 
     /**

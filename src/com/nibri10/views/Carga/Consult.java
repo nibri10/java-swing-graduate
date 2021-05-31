@@ -26,6 +26,7 @@ public class Consult extends JFrame {
     private JTextField maximumSpeedReal;
     private JButton removeItemForPlate;
     private JButton exit;
+    private JTextField maximumWeight2;
     private static Consult consult;
 
 
@@ -57,6 +58,7 @@ public class Consult extends JFrame {
                        maximumSpeed.setText(String.valueOf(findOrFail.get().calcSpeed(findOrFail.get().getMaximumSpeed())));
                        maximumSpeedReal.setText(String.valueOf(findOrFail.get().getMaximumSpeed()));
                        maximumWeight.setText(String.valueOf(findOrFail.get().getTara()));
+                       maximumWeight2.setText(String.valueOf(findOrFail.get().getMaximumWeight()));
                        numberOfPistons.setText(String.valueOf(findOrFail.get().getMotor().getNumberOfPistons()));
                        power.setText(String.valueOf(findOrFail.get().getMotor().getPower()));
                    }else{
@@ -67,6 +69,7 @@ public class Consult extends JFrame {
                        maximumSpeed.setText("");
                        maximumSpeedReal.setText("");
                        maximumWeight.setText("");
+                       maximumWeight2.setText("");
                        numberOfPistons.setText("");
                        power.setText("");
                    }

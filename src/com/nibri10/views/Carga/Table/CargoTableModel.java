@@ -22,6 +22,7 @@ public class CargoTableModel extends AbstractTableModel {
             "Velocidade Máxima",
             "Número de pistões",
             "Tara",
+            "Carga máxima",
             "Potência"
     };
     private final int COLUMN_PLATE = 0;
@@ -32,7 +33,8 @@ public class CargoTableModel extends AbstractTableModel {
     private final int COLUMN_MAXIMUM_SPEED = 5;
     private final int COLUMN_NUMBERS_OF_PISTONS = 6;
     private final int COLUMN_TARA = 7;
-    private final int COLUMN_POWER = 8;
+    private final int COLUMN_MAXIMUM_WEIGHT = 8;
+    private final int COLUMN_POWER = 9;
 
     private  ArrayList<Carga> cargoArrayList;
 
@@ -76,6 +78,8 @@ public class CargoTableModel extends AbstractTableModel {
                 return cargo.getMotor().getNumberOfPistons();
             case COLUMN_TARA:
                 return cargo.getTara();
+            case COLUMN_MAXIMUM_WEIGHT:
+                return cargo.getMaximumWeight();
             case COLUMN_POWER:
                 return cargo.getMotor().getPower();
 
@@ -89,6 +93,7 @@ public class CargoTableModel extends AbstractTableModel {
             case COLUMN_MAXIMUM_SPEED:
             case COLUMN_MAXIMUM_SPEED_CALCULATE:
             case COLUMN_TARA:
+            case COLUMN_MAXIMUM_WEIGHT:
                 return Float.class;
             case COLUMN_NUMBERS_OF_PISTONS:
             case COLUMN_POWER:
